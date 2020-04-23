@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books x Bookies
+{% endblock %}
+
+{% block body %}
+    <style>
+        .lead {
+            font-style: italic;
+        }
+        .margin {
+            margin-top: 1em;
+            margin-bottom: 0em;
+        }
+        .margin-b {
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <div class='jumbotron'>
+        <h1>Welcome to Books x Bookies!</h1>
+        <p class="lead">Members Only! Please Log In.</p>
+    </div>
+    <form action="{{ url_for('book') }}" class="container-fluid" method="post">
+        <div class="form-group">
+            <input type="email" class="form-control margin-b" name="username" placeholder="Enter Username">
+            <input type="password" class="form-control margin-b" name="password" placeholder="Enter Password">
+        </div>
+        <button class="btn btn-outline-secondary">Login</button>
+        
+     </form>
+    <div class="container-fluid form-group margin">
+        <form>
+            <a href="/newuser">New User? Sign In</a>
+        </form>
+    </div>
+    <div class="container-fluid form-group">
+        <a href="#">Forgot Password?</a>
+    </div>
+
+
+{% endblock %}
+

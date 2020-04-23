@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books x Bookies
+{% endblock %}
+
+{% block body %}
+    <style>
+        .margin-b {
+            margin-bottom: 10px;
+        }
+    </style>
+    <h1 class="container-fluid">Search Engine:</h1>   
+
+    <form class="container-fluid" action="{{ url_for('results') }}" method="post">
+        <select class="form-control margin-b" name="type_search">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="isbn">ISBN</option>
+        </select>
+
+        <div class="form-group">
+            <input class="form-control" name="search_term" placeholder="Search here">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-outline-secondary">Search</button>
+        </div>
+    </form>
+
+
+{% endblock %}

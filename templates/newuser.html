@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books x Bookies
+{% endblock %}
+
+{% block body %}
+
+    <h1>Sign Up:</h1>
+
+    <style>
+        .marg {
+            margin: 5px;
+        }
+    </style>
+
+    <form action="{{ url_for('confirm') }}" method="post">
+        <div class="form-group form-inline marg justify-content-between" name="u_name">
+            <h6><label for="un" class="col-form-label">Username</label></h6>
+            <input class="form-control" type="email" name="u_name" id="un" placeholder="Username">
+        </div>
+
+        <div class="form-group form-inline marg justify-content-between" name="p_word">
+            <h6><label for="pw" class="col-form-label">Password</label></h6>
+            <input class="form-control" type="password" name="p_word" id="pw" placeholder="Password">
+        </div>
+        <button class="btn marg btn-outline-primary" style="float: right;">Submit</button>
+
+    </form>
+    
+   
+
+
+{% endblock %}

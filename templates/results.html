@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books x Bookies
+{% endblock %}
+
+{% block body %}
+    <style>
+        .lead {
+            font-style: italic;
+        }
+
+    </style>
+    <div class="container-fluid">
+        <h1>Results:</h1>
+        <p>You searched '{{ searchterm }}' as '{{ typeofsearch }}'.</p>
+    </div>
+
+    <table class="container-fluid table">
+        <tr>
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+        </tr>
+        {% for result in results %}
+            <tr scope="row">
+                <td><a href="{{ url_for('result', r_isbn=result.isbn) }}">{{ result.isbn }}</td>
+                <td>{{ result.title }}</td>
+                <td>{{ result.author }}</td>
+                <td>{{ result.year }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
